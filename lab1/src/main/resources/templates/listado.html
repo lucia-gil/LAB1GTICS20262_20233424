@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Equipos Registrados</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        padding-top: 60px;
+        }
+        .contenedor {
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        width: 600px;
+        }
+        h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        }
+        .buscador {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+        }
+        .buscador input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        }
+        .buscador button {
+        padding: 8px 16px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        }
+        th {
+        background-color: #1565c0;
+        color: white;
+        padding: 8px;
+        text-align: left;
+        }
+        td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        }
+        .sin-datos {
+        text-align: center;
+        color: #777;
+        padding: 15px 0;
+        }
+        .link-abajo {
+        text-align: center;
+        margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="contenedor">
+    <h2>Listado de Equipos Registrados</h2>
+    <div class="buscador">
+        <input type="text" id="inputBuscar" placeholder="Buscar por codigo de
+activo...">
+        <button onclick="buscarEquipo()">Buscar</button>
+    </div>
+    <p th:if="${busqueda != null}">
+        Resultados para: <strong th:text="${busqueda}"></strong> -
+        <a th:href="@{/equipos/listado}">limpiar busqueda</a>
+    </p>
+    <div th:if="${#lists.isEmpty(equipos)}" class="sin-datos">
+        No hay equipos registrados.
+    </div>
+    <table th:unless="${#lists.isEmpty(equipos)}">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Codigo Activo</th>
+            <th>Fecha Adquisicion</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="equipo : ${equipos}">
+            <td th:text="${equipo.nombre}"></td>
+            <td th:text="${equipo.tipo}"></td>
+            <td th:text="${equipo.codigoActivo}"></td>
+            <td th:text="${equipo.fechaAdquisicion}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="link-abajo">
+        <a th:href="@{/equipos/registro}">Registrar nuevo equipo</a>
+    </div>
+</div>
+<script>
+    function buscarEquipo() {
+    var codigo = document.getElementById("inputBuscar").value.trim();
+    if (codigo !== "") {
+    window.location.href = "/equipos/buscar/" + codigo;
+    }
+    }
+</script>
+</body>
+</html>

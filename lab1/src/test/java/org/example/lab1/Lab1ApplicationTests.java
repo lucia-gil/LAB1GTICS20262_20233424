@@ -1,13 +1,13 @@
-package com.pucp.lab1GTICS;
+package org.example.lab1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Lab1GticsApplicationTests {
+class Lab1ApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
