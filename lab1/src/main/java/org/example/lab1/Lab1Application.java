@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Lab1Application {
     public static void main(String[] args) {
-        // esto levanta el servidor embebido y cargara todo el conetxto del spring
         SpringApplication.run(Lab1Application.class, args);
     }
 }
