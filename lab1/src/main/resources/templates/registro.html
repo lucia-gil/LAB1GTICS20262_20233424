@@ -3,83 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>eL Registro de Equipo Tecnologico</title>
-    <style>
-        body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: center;
-        padding-top: 60px;
-        }
-        .contenedor {
-        background-color: white;
-        padding: 30px 40px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        width: 350px;
-        }
-        h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        }
-        label {
-        display: block;
-        margin-top: 12px;
-        margin-bottom: 4px;
-        font-size: 14px;
-        }
-        input, select {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        }
-        button {
-        width: 100%;
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #1565c0;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        }
-        button:hover {
-        background-color: #0d47a1;
-        }
-        .link-abajo {
-        text-align: center;
-        margin-top: 15px;
-        }
-    </style>
+
 </head>
 <body>
 <div class="contenedor">
     <h2>Registro de Equipo Tecnologico</h2>
-    <form th:action="@{/equipos/registrar}" method="post">
-        <label for="nombre">Nombre del Equipo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej: Lewis
-Renglon" required>
-        <label for="tipo">Tipo de Equipo</label>
-        <select id="tipo" name="tipo" required>
-            <option value="">Seleccione...</option>
-            <option value="Laptop">Laptop</option>
-            <option value="PC">PC</option>
-            <option value="Servidor">Servidor</option>
-        </select>
-        <label for="codigoActivo">Codigo de Activo</label>
-        <input type="text" id="codigoActivo" name="codigoActivo"
-               placeholder="Ej: ABC12345TYU" required>
-        <label for="fechaAdquisicion">Fecha de Adquisicion</label>
-        <input type="date" id="fechaAdquisicion" name="fechaAdquisicion"
-               required>
-        <button type="submit">Registrar Equipo</button>
-    </form>
-    <div class="link-abajo">
-        <a th:href="@{/equipos/listado}">Ver listado de equipos</a>
-    </div>
+
 </div>
 </body>
-HTML
 </html>
