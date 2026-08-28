@@ -8,8 +8,8 @@ public class Equipo {
     private String tipo;
     private String codigoActivo;
     private String fechaAdquisicion;
-    // constructor vacio, lo necesitamos porque en el controlador vamos a
-    // instanciar el objeto primero y luego ir llenando cada campo con los
+    // constructor vacio, lo necesito porque en el controlador vamos a
+    // se instancia el objeto primero y luego se va llenando cada campo
 
     public Equipo() {
     }
